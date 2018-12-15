@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CountCtx } from '../App';
 
 const Counter = () => {
-	const [ count, setCount ] = useState(0);
-
-	return (
-		<div>
-			<p>You clicked {count} times</p>
-			<button onClick={() => setCount(count + 1)}>Click me</button>
-		</div>
-	);
+	const count = useContext(CountCtx);
+	return <div>Counter is {count}</div>;
 };
 
 export default Counter;
